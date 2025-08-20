@@ -1,5 +1,5 @@
 {
-  "name": "rendang-guide",
+  "name": "ai-kitchen",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,19 +9,33 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ai-sdk/google": "^2.0.7",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/joy": "^5.0.0-beta.52",
+    "@radix-ui/react-scroll-area": "^1.2.10",
+    "ai": "^5.0.16",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.540.0",
+    "next": "15.4.7",
+    "openai": "^5.12.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.4.7"
+    "react-dropzone": "^14.3.8",
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.4.7",
-    "@eslint/eslintrc": "^3"
+    "tailwindcss": "^4",
+    "tw-animate-css": "^1.3.7",
+    "typescript": "^5"
   }
 }
