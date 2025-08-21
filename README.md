@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI-Kitchen 🍽️
 
-## Getting Started
+AI-Kitchen adalah aplikasi web satu halaman (SPA) inovatif yang memanfaatkan kecerdasan buatan (AI) untuk membantu pengguna dalam eksplorasi kuliner. Aplikasi ini memungkinkan pengguna untuk mendapatkan resep masakan hanya dengan mengunggah gambar.
 
-First, run the development server:
+Fitur utamanya adalah kemampuan untuk mengunggah gambar, baik itu foto masakan yang sudah jadi maupun bahan-bahan mentah, untuk kemudian dianalisis oleh AI yang akan memberikan resep dan petunjuk cara memasak yang relevan. Aplikasi ini dirancang untuk memberikan pengalaman yang mulus dan intuitif bagi para pencinta masak.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Struktur Proyek
+
+```
+ai-kitchen/
+├── public/
+├── src/
+│   ├── app/
+│   │   ├── api/          # API Routes untuk interaksi dengan AI
+│   │   └── page.tsx      # Halaman utama
+│   └── components/       # Komponen React
+├── .env.local            # File environment variables
+├── package.json
+└── ...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Fitur
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Unggah Gambar:** Pengguna dapat mengunggah gambar bahan makanan atau masakan jadi.
+- **Analisis AI:** Gambar yang diunggah dianalisis menggunakan model AI generatif (Google Gemini/OpenAI).
+- **Generasi Resep:** AI akan menghasilkan resep lengkap berdasarkan konten gambar, termasuk bahan-bahan dan langkah-langkah memasak.
+- **Antarmuka Intuitif:** Desain halaman tunggal yang sederhana dan mudah digunakan.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
 
-## Learn More
+- **Framework:** Next.js 15
+- **UI Library:** React 19, MUI Joy, Tailwind CSS
+- **AI / SDK:** Vercel AI SDK, Google AI SDK, OpenAI
+- **File Handling:** React Dropzone
 
-To learn more about Next.js, take a look at the following resources:
+## Memulai Proyek
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Prasyarat
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Node.js (v20 atau lebih baru)
+- npm atau Yarn
 
-## Deploy on Vercel
+### Instalasi
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1.  Clone repositori ini:
+    ```bash
+    git clone https://github.com/adil-azuri/AI-Kitchen.git
+    cd ai-kitchen
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2.  Install semua _dependency_ yang dibutuhkan:
+    ```bash
+    npm install
+    ```
+
+3.  Buat file `.env.local` di root project dan tambahkan API key Anda.
+
+    ```env
+    # Pilih salah satu atau keduanya, tergantung model AI yang ingin digunakan
+    GOOGLE_API_KEY="your_google_api_key"
+    OPENAI_API_KEY="your_openai_api_key"
+    ```
+
+4.  Jalankan server pengembangan:
+    ```bash
+    npm run dev
+    ```
+
+5.  Buka http://localhost:3000 di browser Anda.
+
+## API Endpoints
+
+Proyek ini menggunakan Next.js App Router, di mana logika backend untuk berinteraksi dengan AI ditangani melalui _Server Actions_ atau _API Routes_.
+
+- **Server Action/API Route**: Terdapat logika sisi server yang menerima _prompt_ teks dan gambar, kemudian mengirimkannya ke Google AI/OpenAI API untuk menghasilkan resep.
+
+## Environment Variables
+
+Variabel berikut perlu diatur dalam file `.env.local` Anda:
+
+- `GOOGLE_API_KEY`: API Key untuk Google AI (Gemini).
+- `OPENAI_API_KEY`: API Key untuk OpenAI.
