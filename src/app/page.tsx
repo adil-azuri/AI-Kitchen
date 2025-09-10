@@ -6,7 +6,7 @@ import FileUploadContainer from "@/components/fileUploadContainer";
 export default function Home() {
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen px-5">
       <div className="wave-background"></div>
       <div className="relative z-10 flex flex-col items-center justify-center py-5">
         <div className="w-full max-w-3xl mx-auto">
