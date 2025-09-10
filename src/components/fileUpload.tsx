@@ -6,6 +6,7 @@ import { Card, CardDescription, CardHeader, CardTitle, CardContent, CardFooter }
 import { useCallback, useState } from "react";
 import { FileIcon, Loader2Icon, Upload, X } from "lucide-react";
 import { getAiResult } from "@/app/api/getAiResponse";
+import Image from 'next/image';
 
 interface FileUploadProps {
     value?: filePreview[],
@@ -156,9 +157,11 @@ function FileUpload({
                                     <div className="flex items-center gap-3 min-w-0">
                                         {file.preview ? (
                                             <div className="size-16 overflow-hidden rounded-md flex-shrink-0">
-                                                <img
+                                                <Image
                                                     src={file.preview}
                                                     alt={file.file.name}
+                                                    width={64}
+                                                    height={64}
                                                     className="object-cover w-full h-full"
                                                 />
 

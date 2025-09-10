@@ -3,8 +3,26 @@
 import { google } from '@ai-sdk/google';
 import { generateText } from 'ai';
 
+interface MessageContentText {
+    type: 'text';
+    text: string;
+}
+
+interface MessageContentFile {
+    type: 'file';
+    data: string;
+    mediaType: string;
+}
+
+type MessageContent = MessageContentText | MessageContentFile;
+
+interface Message {
+    role: 'user';
+    content: MessageContent[];
+}
+
 export const getAiResult = async (prompt: string, file?: File) => {
-    const messages: any[] = [
+    const messages: Message[] = [
         {
             role: 'user',
             content: [

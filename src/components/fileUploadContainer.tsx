@@ -18,7 +18,7 @@ function FileUploadContainer() {
         setFiles(newFiles)
     }
     const handleRemove = (file: filePreview) => {
-        toast
+        toast.success(`${file.file.name} removed successfully`)
     }
 
     return (
